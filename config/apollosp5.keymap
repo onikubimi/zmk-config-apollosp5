@@ -4,19 +4,17 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
-    // --- コンボ設定（既存ベースを維持） ---
+    // --- コンボ設定（既存のQWE/BT設定を完全維持） ---
     combos {
         compatible = "zmk,combos";
         
-        // Q+W+E (0 1 2) で Bootloader
         combo_bootloader {
             timeout-ms = <50>;
-            key-positions = <0 1 2>;
+            key-positions = <0 1 2>; 
             bindings = <&bootloader>;
             layers = <1>;
         };
 
-        // Q+A (0 10) で BT SEL 0
         combo_bt_sel_0 {
             timeout-ms = <50>;
             key-positions = <0 10>;
@@ -24,7 +22,6 @@
             layers = <1>;
         };
 
-        // W+S (1 11) で BT SEL 1
         combo_bt_sel_1 {
             timeout-ms = <50>;
             key-positions = <1 11>;
@@ -32,7 +29,6 @@
             layers = <1>;
         };
 
-        // E+D (2 12) で BT SEL 2
         combo_bt_sel_2 {
             timeout-ms = <50>;
             key-positions = <2 12>;
@@ -40,7 +36,6 @@
             layers = <1>;
         };
 
-        // T+G+V (4 14 24) で BT CLR
         combo_bt_clr {
             timeout-ms = <50>;
             key-positions = <4 14 24>;
@@ -49,8 +44,8 @@
         };
     };
 
-    // --- センサー挙動（右手EC12） ---
-    sensors {
+    // --- センサー設定（右側のEC12用） ---
+    sensors: sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&right_encoder>;
         triggers-per-rotation = <20>;
@@ -59,39 +54,37 @@
     keymap {
         compatible = "zmk,keymap";
 
-        // Layer 0: Default
-        // 5WAY(Center, Up, Down, Left, Right), EC12(Push) を含む
+        // Layer 0: Default (白色印字)
         default_layer {
             bindings = <
-                &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
-                &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K      &kp L      &kp BSPC
-                &kp LSHFT  &kp Z      &kp X      &kp C      &kp V          &kp B      &kp N      &kp M      &kp EQUAL  &kp DEL
-                /* 5WAY (L) / Thumb (L) */      /* Thumb (R) / EC12 (R) */
-                &kp ESC    &kp UP     &kp DOWN   &kp LEFT   &lt 1 SPACE    &lt 2 INT5 &kp RGUI   &kp COMMA  &kp DOT    &kp ENTER
+/* --- LEFT SIDE --- */
+          &kp N1    &kp N2  &kp N3    &kp N4    &kp N5                              &kp N6   &kp N7   &kp N8    &kp N9    &kp N0
+&kp ESC   &kp Q     &kp W   &kp E     &kp R     &kp T    &kp BSPC        &kp ,      &kp Y    &kp U    &kp I     &kp O     &kp P     &kp BSPC
+&kp TAB   &kp A     &kp S   &kp D     &kp F     &kp G    &kp ENTER       &kp .      &kp H    &kp J    &kp K     &kp L     &kp UP    &kp ENTER
+&kp CAPS  &kp BSLH  &kp Z   &kp X     &kp C     &kp V    &kp 5WAY        &kp EC11   &kp B    &kp N    &kp M     &kp LEFT  &kp DOWN  &kp RIGHT
+                            &kp LSHFT &kp LCTRL &kp LALT &lt 1 SPACE     &lt 2 INT5 &kp WIN  &kp DEL  &kp MINUS
             >;
-            sensor-bindings = <&inc_dec_kp VOL_UP VOL_DN>; // EC12回転で音量
+            sensor-bindings = <&inc_dec_kp VOL_UP VOL_DN>;
         };
 
-        // Layer 1: Upper (左上がL1相当の機能)
-        function_layer {
+        // Layer 1: Upper (右上・青色印字) - 左親指(SPACE)長押し
+        upper_layer {
             bindings = <
-                &kp N1     &kp N2     &kp N3     &kp N4     &kp N5         &kp N6     &kp N7     &kp N8     &kp N9     &kp N0
-                &none      &none      &kp ENTER  &kp UP     &kp BSPC       &none      &none      &kp SEMI   &kp SQT    &kp BSPC
-                &kp TAB    &none      &kp LEFT   &kp DOWN   &kp RIGHT      &none      &none      &kp PLUS   &kp MINUS  &kp DEL
-                &studio_unlock &none  &none      &none      &trans         &none      &none      &kp SLASH  &kp INT1   &kp ENTER
+/* --- LEFT SIDE --- */
+&trans    &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT          &kp AMPS  &kp LPAR  &kp RPAR  &none     &none     &trans
+&trans    &none     &none     &none     &none     &none              &none     &none     &kp AT    &none     &none     &trans
+&trans    &none     &none     &none     &none     &none              &none     &none     &kp SEMI  &kp COLON &none     &trans
+&trans    &none     &none     &none     &none     &none              &none     &none     &none     &none     &none     &none
+          &trans    &trans    &trans    &trans                       &none     &none     &none     &none
             >;
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>; // L1ではスクロール
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
 
-        // Layer 2: Lower (右下がL2相当の機能)
+        // Layer 2: Lower (右下・赤色印字) - 右親指(無変換)長押し
         lower_layer {
             bindings = <
-                &kp F1     &kp F2     &kp F3     &kp F4     &kp F5         &kp F6     &kp F7     &kp F8     &kp F9     &kp F10
-                &kp F11    &kp F12    &none      &none      &none          &none      &none      &none      &none      &none
-                &none      &none      &none      &none      &none          &none      &none      &none      &none      &none
-                &none      &none      &none      &none      &none          &trans     &none      &none      &none      &none
-            >;
-            sensor-bindings = <&inc_dec_kp BRIGHTNESS_UP BRIGHTNESS_DEC>; // L2では輝度
-        };
-    };
-};
+/* --- LEFT SIDE --- */
+&none     &none     &none     &none     &none     &none              &none     &none     &none     &none     &none     &none
+&none     &none     &none     &none     &none     &none              &none     &none     &none     &kp LBKT  &kp RBKT  &none
+&none     &none     &none     &none     &none     &none              &none     &none     &none     &none     &none     &none
+&none     &none     &none
