@@ -1,0 +1,16 @@
+file_format: "1"
+id: apollosp5
+name: ApolloSP5
+type: shield
+requires:
+  - pro_micro
+features:
+  - keys
+  - studio
+siblings:
+  - apollosp5_left
+  - apollosp5_right
+boards:
+  - nice_nano_v2
+  - nice_nano
+  - pro_micro
