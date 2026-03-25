@@ -105,56 +105,15 @@ default_transform: keymap_transform0 {
     };
 
 kscan0: kscan {
-        compatible = "zmk,kscan-composite";
-        rows = <5>;
-        columns = <14>;
-
-        left_matrix: left_matrix {
-            kscan = <&kscan_left>;
-        };
-
-        right_matrix: right_matrix {
-            kscan = <&kscan_right>;
-            column-offset = <7>; // 右側は7列目(Col_7)から開始
-        };
-    };
-
-    kscan_left: kscan_left {
         compatible = "zmk,kscan-gpio-matrix";
+        wakeup-source;
         diode-direction = "col2row";
         row-gpios
-            = <&gpio0 17 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio0 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio0 2  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        col-gpios
-            = <&gpio0 6  GPIO_ACTIVE_HIGH>
-            , <&gpio0 8  GPIO_ACTIVE_HIGH>
-            , <&gpio1 15 GPIO_ACTIVE_HIGH>
-            , <&gpio1 13 GPIO_ACTIVE_HIGH>
-            , <&gpio1 11 GPIO_ACTIVE_HIGH>
-            , <&gpio0 10 GPIO_ACTIVE_HIGH>
-            , <&gpio0 9  GPIO_ACTIVE_HIGH>;
-    };
-
-    kscan_right: kscan_right {
-        compatible = "zmk,kscan-gpio-matrix";
-        diode-direction = "col2row";
-        row-gpios
-            = <&gpio0 17 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio0 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&gpio0 2  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        col-gpios
-            = <&gpio0 6  GPIO_ACTIVE_HIGH>
-            , <&gpio0 8  GPIO_ACTIVE_HIGH>
-            , <&gpio1 15 GPIO_ACTIVE_HIGH>
-            , <&gpio1 13 GPIO_ACTIVE_HIGH>
-            , <&gpio1 11 GPIO_ACTIVE_HIGH>
-            , <&gpio0 10 GPIO_ACTIVE_HIGH>
-            , <&gpio0 9  GPIO_ACTIVE_HIGH>;
+            = <&gpio0 17 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Row_0
+            , <&gpio0 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Row_1
+            , <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Row_2
+            , <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Row_3
+            , <&gpio0 2  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // Row_4
     };
 };
 
