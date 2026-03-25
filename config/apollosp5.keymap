@@ -4,7 +4,6 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
-    // --- コンボ設定（既存のQWE/BT設定を完全維持） ---
     combos {
         compatible = "zmk,combos";
         
@@ -44,7 +43,6 @@
         };
     };
 
-    // --- センサー設定（右側のEC12用） ---
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&right_encoder>;
@@ -54,42 +52,37 @@
     keymap {
         compatible = "zmk,keymap";
 
-        // Layer 0: Default (白色印字)
         default_layer {
             bindings = <
-/* --- LEFT SIDE --- */                                                  /* --- RIGHT SIDE --- */
-          &kp N1    &kp N2  &kp N3    &kp N4    &kp N5                              &kp N6   &kp N7   &kp N8    &kp N9    &kp N0
-&kp ESC   &kp Q     &kp W   &kp E     &kp R     &kp T    &kp BSPC        &kp COMMA  &kp Y    &kp U    &kp I     &kp O     &kp P     &kp BSPC
-&kp TAB   &kp A     &kp S   &kp D     &kp F     &kp G    &kp ENTER       &kp DOT    &kp H    &kp J    &kp K     &kp L     &kp UP    &kp ENTER
-&kp CAPS  &kp BSLH  &kp Z   &kp X     &kp C     &kp V    &kp ENTER       &none      &kp B    &kp N    &kp M     &kp LEFT  &kp DOWN  &kp RIGHT
-                            &kp LSHFT &kp LCTRL &kp LALT &lt 1 SPACE     &lt 2 INT5 &kp LGUI &kp DEL  &kp MINUS
+/* Row 0 */          &kp N1    &kp N2  &kp N3    &kp N4    &kp N5                                   &kp N6    &kp N7    &kp N8    &kp N9    &kp N0
+/* Row 1 */ &kp ESC  &kp Q     &kp W   &kp E     &kp R     &kp T     &kp BSPC             &kp COMMA &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BSPC
+/* Row 2 */ &kp TAB  &kp A     &kp S   &kp D     &kp F     &kp G     &kp ENTER            &kp DOT   &kp H     &kp J     &kp K     &kp L     &kp UP    &kp ENTER
+/* Row 3 */ &kp CAPS &kp BSLH  &kp Z   &kp X     &kp C     &kp V     &kp ENTER            &kp B     &kp N     &kp M     &kp LEFT  &kp DOWN  &kp RIGHT &none
+/* Row 4 */                            &kp LSHFT &kp LCTRL &kp LALT  &lt 1 SPACE          &lt 2 INT5 &kp LGUI &kp DEL   &kp MINUS
             >;
             sensor-bindings = <&inc_dec_kp M_SCRL_L M_SCRL_R>;
         };
 
-        // Layer 1: Upper (右上・青色印字) - 左親指(SPACE)長押し
         upper_layer {
             bindings = <
-/* --- LEFT SIDE --- */                                                  /* --- RIGHT SIDE --- */
-          &none     &none     &none     &none     &none                           &none     &none     &none     &none     &none
-&trans    &none     &none     &none     &none     &none     &trans       &none    &none     &none     &kp AT    &kp LBKT  &kp RBKT  &trans
-&trans    &none     &none     &none     &none     &none     &trans       &none    &none     &none     &kp SEMI  &kp COLON &trans    &trans
-&trans    &trans    &none     &none     &none     &none     &trans       &none    &none     &none     &none     &trans    &trans    &trans
-                              &trans    &trans    &trans    &trans       &trans   &trans    &trans    &trans
+/* Row 0 */          &none     &none   &none     &none     &none                                   &none     &none     &none     &none     &none
+/* Row 1 */ &trans   &none     &none   &none     &none     &none     &trans               &none    &none     &none     &kp AT    &kp LBKT  &kp RBKT  &trans
+/* Row 2 */ &trans   &none     &none   &none     &none     &none     &trans               &none    &none     &none     &kp SEMI  &kp COLON &trans    &trans
+/* Row 3 */ &trans   &trans    &none   &none     &none     &none     &trans               &none    &none     &none     &none     &trans    &trans    &trans
+/* Row 4 */                            &trans    &trans    &trans    &trans               &trans   &trans    &trans    &trans
             >;
             sensor-bindings = <&inc_dec_kp M_SCRL_L M_SCRL_R>;
         };
 
-        // Layer 2: Lower (右下・赤色印字) - 右親指(無変換)長押し
         lower_layer {
             bindings = <
-/* --- LEFT SIDE --- */                                                  /* --- RIGHT SIDE --- */
-          &none     &none     &none     &none     &none                           &none     &none     &none     &none     &none
-&trans    &none     &none     &none     &none     &none     &trans       &none    &none     &none     &kp AT    &kp LBKT  &kp RBKT  &trans
-&trans    &none     &none     &none     &none     &none     &trans       &none    &none     &none     &kp SEMI  &kp COLON &trans    &trans
-&trans    &trans    &none     &none     &none     &none     &trans       &none    &none     &none     &none     &trans    &trans    &trans
-                              &trans    &trans    &trans    &trans       &trans   &trans    &trans    &trans
+/* Row 0 */          &none     &none   &none     &none     &none                                   &none     &none     &none     &none     &none
+/* Row 1 */ &trans   &none     &none   &none     &none     &none     &trans               &none    &none     &none     &kp AT    &kp LBKT  &kp RBKT  &trans
+/* Row 2 */ &trans   &none     &none   &none     &none     &none     &trans               &none    &none     &none     &kp SEMI  &kp COLON &trans    &trans
+/* Row 3 */ &trans   &trans    &none   &none     &none     &none     &trans               &none    &none     &none     &none     &trans    &trans    &trans
+/* Row 4 */                            &trans    &trans    &trans    &trans               &trans   &trans    &trans    &trans
             >;
             sensor-bindings = <&inc_dec_kp M_SCRL_L M_SCRL_R>;
         };
+    };
 };
