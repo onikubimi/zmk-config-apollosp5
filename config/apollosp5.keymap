@@ -19,4 +19,5 @@
                                             &kp LSHFT &kp LCTRL &kp LALT  &lt 1 SPACE      &lt 2 INT5 &kp LGUI  &kp DEL  &kp MINUS
             >;
         };
+    };
 };
