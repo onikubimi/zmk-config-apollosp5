@@ -4,19 +4,54 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/mouse.h>
 
-
 / {
+    /* コンボ定義: キーマップの外側、ルート直下に置きます */
+    combos {
+        compatible = "zmk,combos";
+        
+        // 例: JとKを同時押しでEnter
+        combo_enter {
+            timeout-ms = <50>;
+            key-positions = <31 32>; // 物理キーのインデックスを指定
+            bindings = <&kp ENTER>;
+        };
+
+        // 他のコンボもここに同様の形式で追加できます
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         // レイヤー0: 基本レイヤー
         default_layer {
             bindings = <
-                         &kp N1    &kp N2   &kp N3    &kp N4    &kp N5                                &kp N6    &kp N7   &kp N8    &kp N9    &kp N0
-              &kp ESC    &kp Q     &kp W    &kp E     &kp R     &kp T     &kp BSPC         &kp COMMA  &kp Y     &kp U    &kp I     &kp O     &kp P     &kp BSPC
-              &kp TAB    &kp A     &kp S    &kp D     &kp F     &kp G     &kp ENTER        &kp DOT    &kp H     &kp J    &kp K     &kp L     &kp UP    &kp ENTER
-              &kp CAPS   &kp BSLH  &kp Z    &kp X     &kp C     &kp V     &kp ENTER                   &kp B     &kp N    &kp M     &kp LEFT  &kp DOWN  &kp RIGHT
-                                            &kp LSHFT &kp LCTRL &kp LALT  &lt 1 SPACE      &lt 2 INT5 &kp LGUI  &kp DEL  &kp MINUS
+                          &kp N1    &kp N2  &kp N3    &kp N4    &kp N5                                  &kp N6    &kp N7   &kp N8    &kp N9    &kp N0
+                &kp ESC   &kp Q     &kp W   &kp E     &kp R     &kp T     &kp BSPC          &kp COMMA   &kp Y     &kp U    &kp I     &kp O     &kp P     &kp BSPC
+                &kp TAB   &kp A     &kp S   &kp D     &kp F     &kp G     &kp ENTER         &kp DOT     &kp H     &kp J    &kp K     &kp L     &kp UP    &kp ENTER
+                &kp CAPS  &kp BSLH  &kp Z   &kp X     &kp C     &kp V     &kp ENTER                     &kp B     &kp N    &kp M     &kp LEFT  &kp DOWN  &kp RIGHT
+                                            &kp LSHFT &kp LCTRL &kp LALT  &lt 1 SPACE       &lt 2 INT5  &kp LGUI  &kp DEL  &kp MINUS
+            >;
+        };
+
+        // レイヤー1: Upper
+        upper_layer {
+            bindings = <
+                        &none   &none  &none   &none   &none                        &none     &none     &none     &none      &none
+                &trans  &none   &none  &none   &none   &none   &trans      &none    &none     &none     &kp AT    &kp LBKT   &kp RBKT  &trans
+                &trans  &none   &none  &none   &none   &none   &trans      &none    &none     &none     &kp SEMI  &kp COLON  &trans    &trans
+                &trans  &trans  &none  &none   &none   &none   &trans               &none     &none     &none     &trans     &trans    &trans
+                                       &trans  &trans  &trans  &trans      &trans   &trans    &trans    &trans
+            >;
+        };
+
+        // レイヤー2: Lower
+        lower_layer {
+            bindings = <
+                        &none      &none        &none        &none        &none                            &none     &none     &none     &none     &none
+                &trans  &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &trans    &none     &none     &none     &none     &none     &none     &trans
+                &trans  &none      &none        &none        &none        &none        &trans    &none     &none     &none     &none     &none     &none     &trans
+                &trans  &trans     &none        &none        &none        &none        &trans              &none     &none     &none     &none     &none     &trans
+                                                &trans       &trans       &trans       &trans    &trans    &trans    &trans    &trans
             >;
         };
     };
