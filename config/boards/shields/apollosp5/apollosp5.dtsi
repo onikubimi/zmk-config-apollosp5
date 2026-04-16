@@ -1,4 +1,4 @@
-#include <dt-bindings/zmk/matrix_transform.h>
+く#include <dt-bindings/zmk/matrix_transform.h>
 #include <physical_layouts.dtsi>
 #include <dt-bindings/zmk/mouse.h> 
 
@@ -102,20 +102,4 @@
             , <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             , <&gpio0 2  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
-
-    encoder: encoder {
-        compatible = "alps,ec11";
-        a-gpios = <&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        b-gpios = <&gpio0 24 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        steps = <80>; // エンコーダーの1回転あたりのステップ数
-        status = "disabled";
-    };
-    sensors: sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&encoder>;
-        triggers-per-rotation = <20>;
-    };
-
-
-
 };
