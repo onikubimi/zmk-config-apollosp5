@@ -10,6 +10,3 @@
         , <&gpio0 10 GPIO_ACTIVE_LOW>
         , <&gpio0 9  GPIO_ACTIVE_LOW>;
 };
-&left_encoder {
-    status = "okay";
-};
