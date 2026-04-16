@@ -14,6 +14,8 @@
         , <&gpio0 10 GPIO_ACTIVE_LOW>
         , <&gpio0 9  GPIO_ACTIVE_LOW>;
 };
-&right_encoder {
-    status = "okay";
+
+sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&encoder>;
 };
