@@ -1,7 +1,7 @@
 #include "apollosp5.dtsi"
 
 &default_transform {
-    col-offset = <7>;
+    col-offset = <6>;
 };
 
 &kscan0 {
@@ -16,19 +16,19 @@
 };
 
 /* 1. エンコーダーの物理定義 */
-/ {
-    encoder: encoder {
-        compatible = "alps,ec11";
-        a-gpios = <&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        b-gpios = <&gpio0 24 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        steps = <80>;
-        status = "okay"; // ここで直接 okay にします
-    };
+// / {
+//     encoder: encoder {
+//         compatible = "alps,ec11";
+//         a-gpios = <&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+//         b-gpios = <&gpio0 24 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+//         steps = <80>;
+//         status = "okay"; // ここで直接 okay にします
+//     };
 
     /* 2. センサーとして ZMK に認識させる定義 */
-    sensors: sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&encoder>;
-        triggers-per-rotation = <20>;
-    };
-};
+//     sensors: sensors {
+//         compatible = "zmk,keymap-sensors";
+//         sensors = <&encoder>;
+//         triggers-per-rotation = <20>;
+//     };
+// };
