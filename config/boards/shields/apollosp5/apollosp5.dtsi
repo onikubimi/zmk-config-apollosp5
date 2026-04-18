@@ -99,20 +99,6 @@
         >;
     };
 
-    encoder: encoder {
-        compatible = "alps,ec11";
-        a-gpios = <&gpio0 24 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        b-gpios = <&gpio0 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        steps = <24>;
-        status = "disabled";
-    };
-
-    sensors: sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&encoder>;
-        triggers-per-rotation = <10>;
-    };
-
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         wakeup-source;
