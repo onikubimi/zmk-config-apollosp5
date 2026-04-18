@@ -19,6 +19,13 @@
         // 他のコンボもここに同様の形式で追加できます
     };
 
+        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+            tap-ms = <20>;
+        };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -32,7 +39,7 @@
                                                 &kp LSHFT  &kp LCTRL &kp LALT  &lt 1 SPACE       &lt 2 INT5  &kp LGUI  &kp DEL  &kp MINUS
                 &kp ENTER  &kp RIGHT  &kp DOWN  &kp LEFT   &kp UP
             >;
-        sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+        sensor-bindings = <&scroll_up_down>;
         };
 
         // レイヤー1: Upper
