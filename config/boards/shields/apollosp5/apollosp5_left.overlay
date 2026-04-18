@@ -1,3 +1,5 @@
+#include "apollosp5.dtsi"
+
 &kscan0 {
     /* 既存のrow-gpiosはそのまま */
     /* col-gpios が定義されていない場合は以下のように追加してください */
