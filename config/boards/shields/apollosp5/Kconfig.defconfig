@@ -1,4 +1,4 @@
-if SHIELD_APOLLOSP5_RIGHT
+if SHIELD_APOLLOSP5_LEFT
 config ZMK_KEYBOARD_NAME
     default "ApolloSP5"
 
@@ -6,7 +6,7 @@ config ZMK_SPLIT_ROLE_CENTRAL
     default y
 endif
 
-if SHIELD_APOLLOSP5_LEFT
+if SHIELD_APOLLOSP5_RIGHT
 config ZMK_SPLIT_ROLE_CENTRAL
     default n
 endif
