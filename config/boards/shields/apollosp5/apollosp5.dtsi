@@ -8,6 +8,11 @@
         zmk,physical-layout = &physical_layout0;
     };
 
+    /* nice!nano v2.0 用のバッテリー定義 */
+    vbatt: vbatt {
+        compatible = "zmk,battery-nrf-vddh";
+    };
+
     physical_layout0: physical_layout0 {
         compatible = "zmk,physical-layout";
         display-name = "Default Layout";
