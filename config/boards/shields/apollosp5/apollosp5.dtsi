@@ -116,3 +116,13 @@
             , <&gpio0 2  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
 };
+
+default_transform: keymap_transform0 {
+        compatible = "zmk,matrix-transform";
+        columns = <14>;
+        rows = <6>;
+        map = <
+            // ...上5行はそのまま...
+            RC(5,7) RC(5,8) RC(5,9) RC(5,10) RC(5,11) // 0〜4 から 7〜11 へ修正
+        >;
+    };
