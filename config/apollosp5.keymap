@@ -37,7 +37,7 @@
                 &kp TAB    &kp A      &kp S     &kp D      &kp F     &kp G     &kp ENTER         &kp DOT     &kp H     &kp J    &kp K     &kp L     &kp UP    &kp ENTER
                 &kp CAPS   &kp BSLH   &kp Z     &kp X      &kp C     &kp V     &kp ENTER                     &kp B     &kp N    &kp M     &kp LEFT  &kp DOWN  &kp RIGHT
                                                 &kp LSHFT  &kp LCTRL &kp LALT  &lt 1 SPACE       &lt 2 INT5  &kp LGUI  &kp DEL  &kp MINUS
-                &kp LEFT  &kp DOWN  &kp RIGHT  &kp UP   &kp ENTER
+                &kp UP    &kp LEFT  &kp DOWN   &kp RIGHT  &kp ENTER
             >;
         sensor-bindings = <&scroll_up_down>;
         };
