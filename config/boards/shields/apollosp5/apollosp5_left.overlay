@@ -8,7 +8,7 @@
         , <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Row 2
         , <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Row 3
         , <&gpio0 2  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Row 4
-        , <&gpio1 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>; // Row 5: Common (P1.06)
+        , <&gpio1 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // Row 5: Common (P1.06)
 
     /* 列(Column)の定義：既存の7本に、5way用の5本(A, B, C, D, Center)を追加 */
     col-gpios
