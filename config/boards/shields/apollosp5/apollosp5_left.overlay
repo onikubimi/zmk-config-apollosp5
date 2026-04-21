@@ -21,9 +21,9 @@
         , <&gpio0 9  GPIO_ACTIVE_LOW> // Col 6
 /* 5way用：ダイオードなし直結のため、チップ内プルアップ(UP)を有効にしてLOW検知にします */
         , <&gpio0 24 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Col 7: A (024) up
-/*      , <&gpio1 0  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Col 8: B (100) */
+        , <&gpio1 0  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Col 8: B (100) left
         , <&gpio0 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Col 9: C (011)
         , <&gpio1 4  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Col 10: D (104)
-        , <&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // Col 11: Center UP
+        , <&gpio0 22 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // Col 11: Center 
 };
 
