@@ -59,6 +59,7 @@
                 &trans  &trans     &none        &none        &none        &none        &trans              &none   &none   &none     &trans     &trans    &trans
                                                 &trans       &trans       &trans       &trans      &trans  &trans  &trans  &trans
             >;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         // レイヤー2: Lower
