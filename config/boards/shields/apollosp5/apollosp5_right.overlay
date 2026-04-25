@@ -6,23 +6,24 @@
 
 
 &kscan0 {
-    diode-direction = "row2col";
+    diode-direction = "col2row";
     row-gpios
-        /* 読み取り側：Rowに PULL_UP を入れる */
-        = <&gpio0 17 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-        , <&gpio0 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-        , <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-        , <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-        , <&gpio0 2  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        /* 2. 行側を「読み取り」に設定し、PULL_DOWN（通常は0V）にする */
+        = <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+
     col-gpios
-        /* 出力側：Colは PULL_UP なし */
-        = <&gpio0 9  GPIO_ACTIVE_LOW>
-        , <&gpio0 10 GPIO_ACTIVE_LOW>
-        , <&gpio1 11 GPIO_ACTIVE_LOW>
-        , <&gpio1 13 GPIO_ACTIVE_LOW>
-        , <&gpio1 15 GPIO_ACTIVE_LOW>
-        , <&gpio0 8  GPIO_ACTIVE_LOW>
-        , <&gpio0 6  GPIO_ACTIVE_LOW>;
+        /* 3. 列側を「出力（HIGH）」にする */
+        = <&gpio0 9  GPIO_ACTIVE_HIGH>
+        , <&gpio0 10 GPIO_ACTIVE_HIGH>
+        , <&gpio1 11 GPIO_ACTIVE_HIGH>
+        , <&gpio1 13 GPIO_ACTIVE_HIGH>
+        , <&gpio1 15 GPIO_ACTIVE_HIGH>
+        , <&gpio0 8  GPIO_ACTIVE_HIGH>
+        , <&gpio0 6  GPIO_ACTIVE_HIGH>;
 };
 
 / {
