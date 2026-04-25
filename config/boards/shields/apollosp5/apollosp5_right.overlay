@@ -28,7 +28,7 @@
     encoder: encoder {
         compatible = "alps,ec11";
         a-gpios = <&gpio0 24 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        b-gpios = <&gpio0 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UPN)>;
+        b-gpios = <&gpio0 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         steps = <24>;
         status = "okay";
     };
