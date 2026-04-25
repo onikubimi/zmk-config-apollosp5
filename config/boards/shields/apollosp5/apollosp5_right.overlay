@@ -24,6 +24,14 @@
         , <&gpio0 6  GPIO_ACTIVE_HIGH>;
 };
 
+    /* 右側のピンを正しく指定（左側と被らないように） */
     &right_encoder {
         status = "okay";
+        a-gpios = <&gpio0 24 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // 右側の実際のピンに
+        b-gpios = <&gpio0 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // 右側の実際のピンに
+    };
+
+    /* 重要：右側ビルドでは、右側のエンコーダーだけをセンサーとして認識させる */
+    &sensors {
+        sensors = <&right_encoder>;
     };
