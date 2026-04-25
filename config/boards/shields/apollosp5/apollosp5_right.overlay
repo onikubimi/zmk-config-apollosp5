@@ -4,9 +4,7 @@
     col-offset = <7>;
 };
 
-
 &kscan0 {
-    diode-direction = "col2row";
     row-gpios
         /* 2. 行側を「読み取り」に設定し、PULL_DOWN（通常は0V）にする */
         = <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
@@ -29,8 +27,8 @@
 / {
     encoder: encoder {
         compatible = "alps,ec11";
-        a-gpios = <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
-        b-gpios = <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+        a-gpios = <&gpio0 24 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        b-gpios = <&gpio0 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UPN)>;
         steps = <24>;
         status = "okay";
     };
