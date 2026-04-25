@@ -5,19 +5,18 @@
 #include <dt-bindings/zmk/mouse.h>
 
 / {
-    /* コンボ定義: キーマップの外側、ルート直下に置きます */
     combos {
         compatible = "zmk,combos";
-        
         // 例: JとKを同時押しでEnter
         combo_enter {
             timeout-ms = <50>;
             key-positions = <31 32>; // 物理キーのインデックスを指定
             bindings = <&kp ENTER>;
         };
-
-        // 他のコンボもここに同様の形式で追加できます
     };
+
+    /* ここが重要！behaviorsブロックを追加しました */
+    behaviors {
         // 縦スクロール
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
@@ -32,7 +31,7 @@
             bindings = <&msc SCRL_RIGHT>, <&msc SCRL_LEFT>;
             tap-ms = <20>;
         };
-
+    };
 
 
     keymap {
