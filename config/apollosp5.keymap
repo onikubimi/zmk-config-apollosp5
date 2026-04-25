@@ -39,7 +39,7 @@
                                                 &kp LSHFT  &kp LCTRL &kp LALT  &lt 1 SPACE       &lt 2 INT5  &kp LGUI  &kp DEL  &kp MINUS
                 &kp UP    &kp LEFT  &kp DOWN   &kp RIGHT  &kp ENTER
             >;
-        sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         // レイヤー1: Upper
