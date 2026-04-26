@@ -15,7 +15,13 @@
         };
     };
 
-    /* ここが重要！behaviorsブロックを追加しました */
+    &msc {
+        x-input-code = <INPUT_REL_HWHEEL>; // 横スクロールの定義
+        y-input-code = <INPUT_REL_WHEEL>;  // 縦スクロールの定義
+        time-to-max-speed-ms = <100>;      // 100〜300くらいが快適です
+        acceleration-exponent = <1>;       // 0だと等速、1以上だと加速がつきます
+    };
+
     behaviors {
         // 縦スクロール
             scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
@@ -28,7 +34,7 @@
             scroll_left_right: behavior_sensor_rotate_mouse_wheel_left_right {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>, <&msc SCRL_LEFT>;
+            bindings = <&msc SCRL_RIGHT>, <&msc SCRL_LEFT>;
             tap-ms = <20>;
             };
     };
