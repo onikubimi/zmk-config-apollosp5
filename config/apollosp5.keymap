@@ -4,6 +4,14 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
+
+&msc {
+        x-input-code = <INPUT_REL_HWHEEL>; // 横スクロールの定義
+        y-input-code = <INPUT_REL_WHEEL>;  // 縦スクロールの定義
+        time-to-max-speed-ms = <100>;      // 100〜300くらいが快適です
+        acceleration-exponent = <1>;       // 0だと等速、1以上だと加速がつきます
+};
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -13,13 +21,6 @@
             key-positions = <31 32>; // 物理キーのインデックスを指定
             bindings = <&kp ENTER>;
         };
-    };
-
-    &msc {
-        x-input-code = <INPUT_REL_HWHEEL>; // 横スクロールの定義
-        y-input-code = <INPUT_REL_WHEEL>;  // 縦スクロールの定義
-        time-to-max-speed-ms = <100>;      // 100〜300くらいが快適です
-        acceleration-exponent = <1>;       // 0だと等速、1以上だと加速がつきます
     };
 
     behaviors {
