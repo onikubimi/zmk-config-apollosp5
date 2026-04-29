@@ -95,18 +95,18 @@
         // レイヤー1: Upper
         upper_layer {
             /* 
-             *     ┃ ! ┃ @ ┃ # ┃ $ ┃ % ┃           ┃ & ┃ * ┃ ( ┃ ) ┃ ^ ┃
+             *     ┃ ! ┃ @ ┃ # ┃ $ ┃ % ┃           ┃ & ┃ * ┃ ( ┃ ) ┃ ~ ┃
              * ─────────────────────────────   ─────────────────────────────
-             * ┃ - ┃ [ ┃ ] ┃ \ ┃ ^ ┃ - ┃ - ┃   ┃ - ┃ - ┃ - ┃ @ ┃ [ ┃ ] ┃ - ┃
+             * ┃   ┃ [ ┃ ] ┃ \ ┃ ^ ┃ - ┃ - ┃   ┃   ┃   ┃   ┃ @ ┃ [ ┃ ] ┃   ┃
              * ─────────────────────────────   ─────────────────────────────
-             * ┃ - ┃ _ ┃ 変┃ ￥┃ F ┃ & ┃ - ┃   ┃ - ┃ - ┃ - ┃ ; ┃ : ┃ - ┃ - ┃
+             * ┃   ┃ _ ┃   ┃   ┃   ┃   ┃   ┃   ┃   ┃   ┃   ┃ ; ┃ : ┃   ┃   ┃
              * ─────────────────────────────   ─────────────────────────────
-             * ┃ - ┃ ! ┃ @ ┃ # ┃ $ ┃ % ┃ - ┃       ┃ - ┃ - ┃ ? ┃ - ┃ - ┃ - ┃
+             * ┃   ┃   ┃   ┃   ┃   ┃   ┃           ┃   ┃   ┃ ? ┃   ┃   ┃   ┃
              * ─────────────────────────────   ─────────────────────────────
-             *             ┃ - ┃ - ┃ - ┃ - ┃   ┃ - ┃ - ┃ - ┃ - ┃
+             *             ┃   ┃   ┃   ┃   ┃   ┃   ┃   ┃   ┃   ┃
              */
             bindings = <
-                        &kp EXCL   &kp AT    &kp POUND  &kp DLLR   &kp PRCNT                      &kp AMPS  &kp ASTRK  &kp LPAR   &kp RPAR  &kp EQUAL 
+                        &kp EXCL   &kp AT    &kp POUND  &kp DLLR   &kp PRCNT                      &kp AMPS  &kp ASTRK  &kp LPAR   &kp RPAR  &kp GRAVE 
                 &trans  &kp LBKT   &kp RBKT  &kp BSLH   &kp EQUAL  &kp MINUS  &trans      &none   &none     &none      &kp AT     &kp LBKT  &kp RBKT  &trans
                 &trans  &kp INT1   &kp INT2  &kp INT3   &kp INT6   &kp AMPS   &trans      &none   &none     &none      &kp SEMI   &kp SQT   &trans    &trans
                 &trans  &kp EXCL   &kp AT    &kp POUND  &kp DLLR   &kp PRCNT  &trans              &none     &none      &kp QMARK  &trans    &trans    &trans
