@@ -80,12 +80,12 @@
         // レイヤー0: 基本レイヤー
         default_layer {
             bindings = <
-                           &kp N1     &kp N2    &kp N3     &kp N4    &kp N5                                  &kp N6    &kp N7   &kp N8    &kp N9    &kp N0
-                &kp ESC    &kp Q      &kp W     &kp E      &kp R     &kp T     &kp BSPC          &kp COMMA   &kp Y     &kp U    &kp I     &kp O     &kp P     &kp BSPC
-                &kp TAB    &kp A      &kp S     &kp D      &kp F     &kp G     &kp ENTER         &kp DOT     &kp H     &kp J    &kp K     &kp L     &kp UP    &kp ENTER
-                &kp CAPS   &kp BSLH   &kp Z     &kp X      &kp C     &kp V     &kp ENTER                     &kp B     &kp N    &kp M     &kp LEFT  &kp DOWN  &kp RIGHT
-                                                &kp LSHFT  &kp LCTRL &kp LALT  &lt 1 SPACE       &lt 2 INT5  &kp LGUI  &kp DEL  &kp MINUS
-                &kp UP    &kp LEFT  &kp DOWN   &kp RIGHT  &kp ENTER
+                          &kp N1    &kp N2    &kp N3     &kp N4     &kp N5                                &kp N6    &kp N7   &kp N8    &kp N9    &kp N0
+                &kp ESC   &kp Q     &kp W     &kp E      &kp R      &kp T     &kp BSPC        &kp COMMA   &kp Y     &kp U    &kp I     &kp O     &kp P     &kp BSPC
+                &kp TAB   &kp A     &kp S     &kp D      &kp F      &kp G     &kp ENTER       &kp DOT     &kp H     &kp J    &kp K     &kp L     &kp UP    &kp ENTER
+                &kp CAPS  &kp BSLH  &kp Z     &kp X      &kp C      &kp V                                 &kp B     &kp N    &kp M     &kp LEFT  &kp DOWN  &kp RIGHT
+                                              &kp LSHFT  &kp LCTRL  &kp LALT  &lt 1 SPACE     &lt 2 INT5  &kp LGUI  &kp DEL  &kp MINUS
+                &kp UP    &kp LEFT  &kp DOWN  &kp RIGHT  &kp ENTER
             >;
             sensor-bindings = <&scroll_left_right>;
         };
@@ -104,11 +104,11 @@
              *             ┃   ┃   ┃   ┃   ┃   ┃   ┃   ┃   ┃ + ┃
              */
             bindings = <
-                        &kp EXCL   &kp AT    &kp POUND  &kp DLLR   &kp PRCNT                         &kp AMPS  &kp ASTRK  &kp LPAR   &kp RPAR  &kp GRAVE 
-                &trans  &none      &none     &kp BSLH   &kp EQUAL  &kp MINUS  &trans      &none      &kp AT    &kp INT1   &none      &kp LBKT  &kp RBKT  &trans
-                &trans  &kp INT1   &kp INT2  &kp INT3   &kp INT6   &kp AMPS   &trans      &kp QMARK  &kp PIPE  &none      &kp SEMI   &kp SQT   &trans    &trans
-                &trans  &kp EXCL   &kp AT    &kp POUND  &kp DLLR   &kp PRCNT  &trans                 &none     &none      &kp UNDER  &trans    &trans
-                                             &trans     &trans     &trans     &trans      &trans     &trans    &trans     &kp PLUS
+                        &kp EXCL   &kp AT    &kp POUND  &kp DLLR   &kp PRCNT                        &kp AMPS  &kp ASTRK  &kp LPAR   &kp RPAR  &kp GRAVE 
+                &trans  &none      &none     &kp BSLH   &kp EQUAL  &kp MINUS  &trans     &none      &kp AT    &kp INT1   &none      &kp LBKT  &kp RBKT   &trans
+                &trans  &kp INT1   &kp INT2  &kp INT3   &kp INT6   &kp AMPS   &trans     &kp QMARK  &kp PIPE  &none      &kp SEMI   &kp SQT   &trans     &trans
+                &trans  &kp EXCL   &kp AT    &kp POUND  &kp DLLR   &kp PRCNT                        &none     &none      &kp UNDER  &trans    &trans     &trans
+                                             &trans     &trans     &trans     &trans     &trans     &trans    &trans     &kp PLUS
             >;
             sensor-bindings = <&scroll_left_right>;
         };
@@ -116,11 +116,11 @@
         // レイヤー2: Lower
         lower_layer {
             bindings = <
-                        &none      &none        &none        &none        &none                          &none     &none     &none     &none     &none
-                &trans  &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &trans    &none   &trans    &trans    &none     &none     &none     &trans
-                &trans  &none      &none        &none        &none        &none        &trans    &none   &trans    &trans    &none     &none     &none     &trans
-                &trans  &trans     &none        &none        &none        &none        &trans            &trans    &trans    &none     &none     &none     &trans
-                                                &trans       &trans       &trans       &trans    &trans  &trans    &trans    &trans
+                        &bt BT_SEL 0  &bt BT_SEL 2  &bt BT_SEL 3  &none   &none                      &none   &none   &none   &none  &none  &none
+                &trans  &bt BT_CLR    &none         &none         &none   &none   &trans     &none   &trans  &trans  &none   &none  &none  &trans
+                &trans  &none         &none         &none         &none   &none   &trans     &none   &trans  &trans  &none   &none  &none  &trans
+                &trans  &trans        &none         &none         &none   &none                      &trans  &trans  &trans  &none  &none  &none
+                                                    &trans        &trans  &trans  &trans     &trans  &trans  &trans  &trans
             >;
             sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
         };
