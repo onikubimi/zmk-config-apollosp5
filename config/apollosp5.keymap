@@ -9,13 +9,13 @@
         x-input-code = <INPUT_REL_HWHEEL>; // 横スクロールの定義
         y-input-code = <INPUT_REL_WHEEL>;  // 縦スクロールの定義
         time-to-max-speed-ms = <100>;      // 100〜300くらいが快適です
-        acceleration-exponent = <1>;       // 0だと等速、1以上だと加速がつきます
+        acceleration-exponent = <3>;       // 0だと等速、1以上だと加速がつきます
 };
 
 / {
     combos {
         compatible = "zmk,combos";
-        // 例: JとKを同時押しでEnter
+        // 2と3を同時押しでZMK Studioロック解除
         combo_enter {
             timeout-ms = <50>;
             key-positions = <1 2>; // 物理キーのインデックスを指定
@@ -69,10 +69,8 @@
  *  ^ (caret)         ┃ &kp EQUAL         ┃ ^ のキー
  *  : (colon)         ┃ &kp SQT           ┃ : のキー
  *  ; (semicolon)     ┃ &kp SEMI          ┃ ; のキー
-
  *  \                 ┃ &kp INT1          ┃ 円マーク
  *  '                 ┃ &kp AMPS          ┃ '
-
  * ============================================================================
  */
 
@@ -97,19 +95,19 @@
             /* 
              *     ┃ ! ┃ @ ┃ # ┃ $ ┃ % ┃           ┃ & ┃ * ┃ ( ┃ ) ┃ ~ ┃
              * ─────────────────────────────   ─────────────────────────────
-             * ┃   ┃   ┃   ┃ \ ┃ ^ ┃ - ┃ - ┃   ┃   ┃ @ ┃ \ ┃   ┃ [ ┃ ] ┃   ┃
+             * ┃   ┃   ┃   ┃   ┃   ┃   ┃   ┃   ┃   ┃ @ ┃ \ ┃   ┃ [ ┃ ] ┃   ┃
              * ─────────────────────────────   ─────────────────────────────
-             * ┃   ┃ _ ┃   ┃   ┃   ┃   ┃   ┃   ┃ ? ┃   ┃   ┃ ; ┃ : ┃   ┃   ┃
+             * ┃   ┃   ┃   ┃   ┃   ┃   ┃   ┃   ┃ ? ┃ | ┃   ┃ ; ┃ : ┃   ┃   ┃
              * ─────────────────────────────   ─────────────────────────────
-             * ┃   ┃   ┃   ┃   ┃   ┃   ┃           ┃   ┃   ┃   ┃   ┃   ┃   ┃
+             * ┃   ┃   ┃   ┃   ┃   ┃   ┃           ┃   ┃   ┃ _ ┃   ┃   ┃   ┃
              * ─────────────────────────────   ─────────────────────────────
              *             ┃   ┃   ┃   ┃   ┃   ┃   ┃   ┃   ┃ + ┃
              */
             bindings = <
-                        &kp EXCL   &kp AT    &kp POUND  &kp DLLR   &kp PRCNT                         &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR  &kp GRAVE 
-                &trans  &none      &none     &kp BSLH   &kp EQUAL  &kp MINUS  &trans      &none      &kp AT    &kp INT1   &none     &kp LBKT  &kp RBKT  &trans
-                &trans  &kp INT1   &kp INT2  &kp INT3   &kp INT6   &kp AMPS   &trans      &kp QMARK  &none     &none      &kp SEMI  &kp SQT   &trans    &trans
-                &trans  &kp EXCL   &kp AT    &kp POUND  &kp DLLR   &kp PRCNT  &trans                 &none     &none      &trans    &trans    &trans
+                        &kp EXCL   &kp AT    &kp POUND  &kp DLLR   &kp PRCNT                         &kp AMPS  &kp ASTRK  &kp LPAR   &kp RPAR  &kp GRAVE 
+                &trans  &none      &none     &kp BSLH   &kp EQUAL  &kp MINUS  &trans      &none      &kp AT    &kp INT1   &none      &kp LBKT  &kp RBKT  &trans
+                &trans  &kp INT1   &kp INT2  &kp INT3   &kp INT6   &kp AMPS   &trans      &kp QMARK  &kp PIPE  &none      &kp SEMI   &kp SQT   &trans    &trans
+                &trans  &kp EXCL   &kp AT    &kp POUND  &kp DLLR   &kp PRCNT  &trans                 &none     &none      &kp UNDER  &trans    &trans
                                              &trans     &trans     &trans     &trans      &trans     &trans    &trans     &kp PLUS
             >;
             sensor-bindings = <&scroll_left_right>;
