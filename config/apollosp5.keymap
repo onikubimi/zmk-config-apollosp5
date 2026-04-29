@@ -33,6 +33,38 @@
             };
     };
 
+/* 
+ * ============================================================================
+ *  JIS (Japanese) Layout Symbol Mapping for ZMK
+ *  OS側が日本語配列設定の時に、目的の記号を入力するための早見表
+ * ============================================================================
+ *  Desired Symbol    | ZMK Keycode   | Note (Behavior on JIS OS)
+ * -------------------|---------------|----------------------------------------
+ *  @  (at mark)      | &kp LBKT      | [ キーの位置
+ *  [  (open bracket) | &kp RBKT      | ] キーの位置
+ *  ]  (close bracket)| &kp BSLH      | \ キーの位置
+ *  ^  (caret)        | &kp EQUAL     | ^ キーの位置
+ *  ~  (tilde)        | &kp EQUAL     | Shift + ^
+ *  :  (colon)        | &kp SQT       | ' キーの位置
+ *  ;  (semicolon)    | &kp SEMI      | そのまま
+ *  =  (equal)        | &kp MINUS     | Shift + - ではなくそのまま入力
+ *  +  (plus)         | &kp SEMI      | Shift + ;
+ *  *  (asterisk)     | &kp SQT       | Shift + :
+ *  (  (paren open)   | &kp N8        | Shift + 8
+ *  )  (paren close)  | &kp N9        | Shift + 9
+ *  _  (underscore)   | &kp INT1      | 「ろ」のキー
+ *  |  (pipe)         | &kp INT3      | 「￥」のキー（または Shift + ￥）
+ *  \  (backslash)    | &kp INT1      | 「ろ」のキー
+ *  ￥ (yen sign)     | &kp INT3      | 「￥」のキー
+ * -------------------|---------------|----------------------------------------
+ *  JIS Specific Keys | ZMK Keycode   | Description
+ * -------------------|---------------|----------------------------------------
+ *  半角/全角          | &kp GRAVE     | US配列の `~` の位置
+ *  無変換             | &kp INT5      | Spaceの左
+ *  変換               | &kp INT4      | Spaceの右
+ *  ひらがな/カタカナ   | &kp INT2      | 変換キーの右
+ * ============================================================================
+ */
 
     keymap {
         compatible = "zmk,keymap";
@@ -53,11 +85,11 @@
         // レイヤー1: Upper
         upper_layer {
             bindings = <
-                        &none      &none        &none        &none        &none                            &none   &none   &none     &none      &none
-                &trans  &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &trans      &none   &none   &none   &kp AT    &kp LBKT   &kp RBKT  &trans
-                &trans  &none      &none        &none        &none        &none        &trans      &none   &none   &none   &kp SEMI  &kp COLON  &trans    &trans
-                &trans  &trans     &none        &none        &none        &none        &trans              &none   &none   &none     &trans     &trans    &trans
-                                                &trans       &trans       &trans       &trans      &trans  &trans  &trans  &trans
+                        &none      &none     &none      &none      &none                          &none   &none   &none     &none      &none
+                &trans  &kp LBKT   &kp RBKT  &kp BSLH   &kp EQUAL  &kp MINUS  &trans      &none   &none   &none   &kp AT    &kp LBKT   &kp RBKT  &trans
+                &trans  &kp INT1   &kp INT2  &kp INT3   &kp INT6   &kp AMPS   &trans      &none   &none   &none   &kp SEMI  &kp SQT　  &trans    &trans
+                &trans  &kp EXCL   &kp AT    &kp POUND  &kp DLLR   &kp PRCNT  &trans              &none   &none   &none     &trans     &trans    &trans
+                                             &trans     &trans     &trans     &trans      &trans  &trans  &trans  &trans
             >;
             sensor-bindings = <&scroll_left_right>;
         };
