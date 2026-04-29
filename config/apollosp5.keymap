@@ -39,36 +39,40 @@
  *  OS側が日本語配列(JIS)設定の時に、目的の記号を1つのキーで出すための設定
  *  参考: https://v0-3-branch.zmk.dev/docs/keymaps/list-of-keycodes#modifiers
  * ============================================================================
- *  Desired Symbol    | ZMK Binding       | Original Key on JIS Layout
- * -------------------|-------------------|------------------------------------
- *  ! (exclamation)   | &kp LS(N1)        | Shift + 1
- *  " (double quote)  | &kp LS(N2)        | Shift + 2
- *  # (hash / sharp)  | &kp LS(N3)        | Shift + 3
- *  $ (dollar)        | &kp LS(N4)        | Shift + 4
- *  % (percent)       | &kp LS(N5)        | Shift + 5
- *  & (ampersand)     | &kp LS(N6)        | Shift + 6
- *  ' (single quote)  | &kp LS(N7)        | Shift + 7
- *  ( (paren open)    | &kp LS(N8)        | Shift + 8
- *  ) (paren close)   | &kp LS(N9)        | Shift + 9
- *  ~ (tilde)         | &kp LS(EQUAL)     | Shift + ^
- *  | (pipe)          | &kp LS(INT3)      | Shift + ￥
- *  + (plus)          | &kp LS(SEMI)      | Shift + ;
- *  * (asterisk)      | &kp LS(SQT)       | Shift + :
- *  < (less than)     | &kp LS(COMMA)     | Shift + ,
- *  > (greater than)  | &kp LS(DOT)       | Shift + .
- *  ? (question)      | &kp LS(SLASH)     | Shift + /
- *  _ (underscore)    | &kp LS(INT1)      | Shift + ろ
- *  { (brace open)    | &kp LS(RBKT)      | Shift + ]  (JISでの物理位置)
- *  } (brace close)   | &kp LS(BSLH)      | Shift + \  (JISでの物理位置)
- * -------------------|-------------------|------------------------------------
- *  Shift不要の記号   | ZMK Binding       | Note
- * -------------------|-------------------|------------------------------------
- *  @ (at mark)       | &kp LBKT          | [ のキー
- *  [ (bracket open)  | &kp RBKT          | ] のキー
- *  ] (bracket close) | &kp BSLH          | \ のキー
- *  ^ (caret)         | &kp EQUAL         | ^ のキー
- *  : (colon)         | &kp SQT           | : のキー
- *  ; (semicolon)     | &kp SEMI          | ; のキー
+ *  Desired Symbol    ┃ ZMK Binding       ┃ Original Key on JIS Layout
+ * -------------------┃-------------------┃------------------------------------
+ *  ! (exclamation)   ┃ &kp LS(N1)        ┃ Shift + 1
+ *  " (double quote)  ┃ &kp LS(N2)        ┃ Shift + 2
+ *  # (hash / sharp)  ┃ &kp LS(N3)        ┃ Shift + 3
+ *  $ (dollar)        ┃ &kp LS(N4)        ┃ Shift + 4
+ *  % (percent)       ┃ &kp LS(N5)        ┃ Shift + 5
+ *  & (ampersand)     ┃ &kp LS(N6)        ┃ Shift + 6
+ *  ' (single quote)  ┃ &kp LS(N7)        ┃ Shift + 7
+ *  ( (paren open)    ┃ &kp LS(N8)        ┃ Shift + 8
+ *  ) (paren close)   ┃ &kp LS(N9)        ┃ Shift + 9
+ *  ~ (tilde)         ┃ &kp LS(EQUAL)     ┃ Shift + ^
+ *  ┃ (pipe)          ┃ &kp LS(INT3)      ┃ Shift + ￥
+ *  + (plus)          ┃ &kp LS(SEMI)      ┃ Shift + ;
+ *  * (asterisk)      ┃ &kp LS(SQT)       ┃ Shift + :
+ *  < (less than)     ┃ &kp LS(COMMA)     ┃ Shift + ,
+ *  > (greater than)  ┃ &kp LS(DOT)       ┃ Shift + .
+ *  ? (question)      ┃ &kp LS(SLASH)     ┃ Shift + /
+ *  _ (underscore)    ┃ &kp LS(INT1)      ┃ Shift + ろ
+ *  { (brace open)    ┃ &kp LS(RBKT)      ┃ Shift + ]  (JISでの物理位置)
+ *  } (brace close)   ┃ &kp LS(BSLH)      ┃ Shift + \  (JISでの物理位置)
+ * -------------------┃-------------------┃------------------------------------
+ *  Shift不要の記号   ┃ ZMK Binding       ┃ Note
+ * -------------------┃-------------------┃------------------------------------
+ *  @ (at mark)       ┃ &kp LBKT          ┃ [ のキー
+ *  [ (bracket open)  ┃ &kp RBKT          ┃ ] のキー
+ *  ] (bracket close) ┃ &kp BSLH          ┃ \ のキー
+ *  ^ (caret)         ┃ &kp EQUAL         ┃ ^ のキー
+ *  : (colon)         ┃ &kp SQT           ┃ : のキー
+ *  ; (semicolon)     ┃ &kp SEMI          ┃ ; のキー
+
+ *  \                 ┃ &kp INT1          ┃ 円マーク
+ *  '                 ┃ &kp AMPS          ┃ '
+
  * ============================================================================
  */
 
@@ -90,12 +94,23 @@
 
         // レイヤー1: Upper
         upper_layer {
+            /* 
+             *     ┃ ! ┃ @ ┃ # ┃ $ ┃ % ┃           ┃ & ┃ * ┃ ( ┃ ) ┃ ^ ┃
+             * ─────────────────────────────   ─────────────────────────────
+             * ┃ - ┃ [ ┃ ] ┃ \ ┃ ^ ┃ - ┃ - ┃   ┃ - ┃ - ┃ - ┃ @ ┃ [ ┃ ] ┃ - ┃
+             * ─────────────────────────────   ─────────────────────────────
+             * ┃ - ┃ _ ┃ 変┃ ￥┃ F ┃ & ┃ - ┃   ┃ - ┃ - ┃ - ┃ ; ┃ : ┃ - ┃ - ┃
+             * ─────────────────────────────   ─────────────────────────────
+             * ┃ - ┃ ! ┃ @ ┃ # ┃ $ ┃ % ┃ - ┃       ┃ - ┃ - ┃ ? ┃ - ┃ - ┃ - ┃
+             * ─────────────────────────────   ─────────────────────────────
+             *             ┃ - ┃ - ┃ - ┃ - ┃   ┃ - ┃ - ┃ - ┃ - ┃
+             */
             bindings = <
-                        &none      &none     &none      &none      &none                          &none   &none   &none     &none     &none
-                &trans  &kp LBKT   &kp RBKT  &kp BSLH   &kp EQUAL  &kp MINUS  &trans      &none   &none   &none   &kp AT    &kp LBKT  &kp RBKT  &trans
-                &trans  &kp INT1   &kp INT2  &kp INT3   &kp INT6   &kp AMPS   &trans      &none   &none   &none   &kp SEMI  &kp SQT   &trans    &trans
-                &trans  &kp EXCL   &kp AT    &kp POUND  &kp DLLR   &kp PRCNT  &trans              &none   &none   &none     &trans    &trans    &trans
-                                             &trans     &trans     &trans     &trans      &trans  &trans  &trans  &trans
+                        &kp EXCL   &kp AT    &kp POUND  &kp DLLR   &kp PRCNT                      &kp AMPS  &kp ASTRK  &kp LPAR   &kp RPAR  &kp EQUAL 
+                &trans  &kp LBKT   &kp RBKT  &kp BSLH   &kp EQUAL  &kp MINUS  &trans      &none   &none     &none      &kp AT     &kp LBKT  &kp RBKT  &trans
+                &trans  &kp INT1   &kp INT2  &kp INT3   &kp INT6   &kp AMPS   &trans      &none   &none     &none      &kp SEMI   &kp SQT   &trans    &trans
+                &trans  &kp EXCL   &kp AT    &kp POUND  &kp DLLR   &kp PRCNT  &trans              &none     &none      &kp QMARK  &trans    &trans    &trans
+                                             &trans     &trans     &trans     &trans      &trans  &trans    &trans     &trans
             >;
             sensor-bindings = <&scroll_left_right>;
         };
