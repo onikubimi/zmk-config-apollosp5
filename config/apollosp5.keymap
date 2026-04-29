@@ -35,34 +35,40 @@
 
 /* 
  * ============================================================================
- *  JIS (Japanese) Layout Symbol Mapping for ZMK
- *  OS側が日本語配列設定の時に、目的の記号を入力するための早見表
+ *  JIS (Japanese) Layout Symbol Mapping with Modifiers for ZMK
+ *  OS側が日本語配列(JIS)設定の時に、目的の記号を1つのキーで出すための設定
+ *  参考: https://v0-3-branch.zmk.dev/docs/keymaps/list-of-keycodes#modifiers
  * ============================================================================
- *  Desired Symbol    | ZMK Keycode   | Note (Behavior on JIS OS)
- * -------------------|---------------|----------------------------------------
- *  @  (at mark)      | &kp LBKT      | [ キーの位置
- *  [  (open bracket) | &kp RBKT      | ] キーの位置
- *  ]  (close bracket)| &kp BSLH      | \ キーの位置
- *  ^  (caret)        | &kp EQUAL     | ^ キーの位置
- *  ~  (tilde)        | &kp EQUAL     | Shift + ^
- *  :  (colon)        | &kp SQT       | ' キーの位置
- *  ;  (semicolon)    | &kp SEMI      | そのまま
- *  =  (equal)        | &kp MINUS     | Shift + - ではなくそのまま入力
- *  +  (plus)         | &kp SEMI      | Shift + ;
- *  *  (asterisk)     | &kp SQT       | Shift + :
- *  (  (paren open)   | &kp N8        | Shift + 8
- *  )  (paren close)  | &kp N9        | Shift + 9
- *  _  (underscore)   | &kp INT1      | 「ろ」のキー
- *  |  (pipe)         | &kp INT3      | 「￥」のキー（または Shift + ￥）
- *  \  (backslash)    | &kp INT1      | 「ろ」のキー
- *  ￥ (yen sign)     | &kp INT3      | 「￥」のキー
- * -------------------|---------------|----------------------------------------
- *  JIS Specific Keys | ZMK Keycode   | Description
- * -------------------|---------------|----------------------------------------
- *  半角/全角          | &kp GRAVE     | US配列の `~` の位置
- *  無変換             | &kp INT5      | Spaceの左
- *  変換               | &kp INT4      | Spaceの右
- *  ひらがな/カタカナ   | &kp INT2      | 変換キーの右
+ *  Desired Symbol    | ZMK Binding       | Original Key on JIS Layout
+ * -------------------|-------------------|------------------------------------
+ *  ! (exclamation)   | &kp LS(N1)        | Shift + 1
+ *  " (double quote)  | &kp LS(N2)        | Shift + 2
+ *  # (hash / sharp)  | &kp LS(N3)        | Shift + 3
+ *  $ (dollar)        | &kp LS(N4)        | Shift + 4
+ *  % (percent)       | &kp LS(N5)        | Shift + 5
+ *  & (ampersand)     | &kp LS(N6)        | Shift + 6
+ *  ' (single quote)  | &kp LS(N7)        | Shift + 7
+ *  ( (paren open)    | &kp LS(N8)        | Shift + 8
+ *  ) (paren close)   | &kp LS(N9)        | Shift + 9
+ *  ~ (tilde)         | &kp LS(EQUAL)     | Shift + ^
+ *  | (pipe)          | &kp LS(INT3)      | Shift + ￥
+ *  + (plus)          | &kp LS(SEMI)      | Shift + ;
+ *  * (asterisk)      | &kp LS(SQT)       | Shift + :
+ *  < (less than)     | &kp LS(COMMA)     | Shift + ,
+ *  > (greater than)  | &kp LS(DOT)       | Shift + .
+ *  ? (question)      | &kp LS(SLASH)     | Shift + /
+ *  _ (underscore)    | &kp LS(INT1)      | Shift + ろ
+ *  { (brace open)    | &kp LS(RBKT)      | Shift + ]  (JISでの物理位置)
+ *  } (brace close)   | &kp LS(BSLH)      | Shift + \  (JISでの物理位置)
+ * -------------------|-------------------|------------------------------------
+ *  Shift不要の記号   | ZMK Binding       | Note
+ * -------------------|-------------------|------------------------------------
+ *  @ (at mark)       | &kp LBKT          | [ のキー
+ *  [ (bracket open)  | &kp RBKT          | ] のキー
+ *  ] (bracket close) | &kp BSLH          | \ のキー
+ *  ^ (caret)         | &kp EQUAL         | ^ のキー
+ *  : (colon)         | &kp SQT           | : のキー
+ *  ; (semicolon)     | &kp SEMI          | ; のキー
  * ============================================================================
  */
 
@@ -85,10 +91,10 @@
         // レイヤー1: Upper
         upper_layer {
             bindings = <
-                        &none      &none     &none      &none      &none                          &none   &none   &none     &none      &none
-                &trans  &kp LBKT   &kp RBKT  &kp BSLH   &kp EQUAL  &kp MINUS  &trans      &none   &none   &none   &kp AT    &kp LBKT   &kp RBKT  &trans
-                &trans  &kp INT1   &kp INT2  &kp INT3   &kp INT6   &kp AMPS   &trans      &none   &none   &none   &kp SEMI  &kp SQT　  &trans    &trans
-                &trans  &kp EXCL   &kp AT    &kp POUND  &kp DLLR   &kp PRCNT  &trans              &none   &none   &none     &trans     &trans    &trans
+                        &none      &none     &none      &none      &none                          &none   &none   &none     &none     &none
+                &trans  &kp LBKT   &kp RBKT  &kp BSLH   &kp EQUAL  &kp MINUS  &trans      &none   &none   &none   &kp AT    &kp LBKT  &kp RBKT  &trans
+                &trans  &kp INT1   &kp INT2  &kp INT3   &kp INT6   &kp AMPS   &trans      &none   &none   &none   &kp SEMI  &kp SQT   &trans    &trans
+                &trans  &kp EXCL   &kp AT    &kp POUND  &kp DLLR   &kp PRCNT  &trans              &none   &none   &none     &trans    &trans    &trans
                                              &trans     &trans     &trans     &trans      &trans  &trans  &trans  &trans
             >;
             sensor-bindings = <&scroll_left_right>;
