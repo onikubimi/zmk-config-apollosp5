@@ -61,7 +61,7 @@
  *  { (brace open)    ┃ &kp LS(RBKT)      ┃ Shift + ]  (JISでの物理位置)
  *  } (brace close)   ┃ &kp LS(BSLH)      ┃ Shift + \  (JISでの物理位置)
  * -------------------┃-------------------┃------------------------------------
- *  Shift不要の記号   ┃ ZMK Binding       ┃ Note
+ *  Shift不要の記号    ┃ ZMK Binding       ┃ Note
  * -------------------┃-------------------┃------------------------------------
  *  @ (at mark)       ┃ &kp LBKT          ┃ [ のキー
  *  [ (bracket open)  ┃ &kp RBKT          ┃ ] のキー
@@ -82,8 +82,8 @@
             bindings = <
                           &kp N1    &kp N2    &kp N3     &kp N4     &kp N5                                &kp N6    &kp N7   &kp N8    &kp N9    &kp N0
                 &kp ESC   &kp Q     &kp W     &kp E      &kp R      &kp T     &kp BSPC        &kp COMMA   &kp Y     &kp U    &kp I     &kp O     &kp P     &kp BSPC
-                &kp TAB   &kp A     &kp S     &kp D      &kp F      &kp G     &kp ENTER       &kp DOT     &kp H     &kp J    &kp K     &kp L     &kp UP    &kp ENTER
-                &kp CAPS  &kp BSLH  &kp Z     &kp X      &kp C      &kp V                                 &kp B     &kp N    &kp M     &kp LEFT  &kp DOWN  &kp RIGHT
+                &kp CAPS  &kp A     &kp S     &kp D      &kp F      &kp G     &kp ENTER       &kp DOT     &kp H     &kp J    &kp K     &kp L     &kp UP    &kp ENTER
+                &kp TAB   &kp BSLH  &kp Z     &kp X      &kp C      &kp V                                 &kp B     &kp N    &kp M     &kp LEFT  &kp DOWN  &kp RIGHT
                                               &kp LSHFT  &kp LCTRL  &kp LALT  &lt 1 SPACE     &lt 2 INT5  &kp LGUI  &kp DEL  &kp MINUS
                 &kp UP    &kp LEFT  &kp DOWN  &kp RIGHT  &kp ENTER
             >;
@@ -92,17 +92,17 @@
 
         // レイヤー1: Upper
         upper_layer {
-            /* 
-             *     ┃ ! ┃ @ ┃ # ┃ $ ┃ % ┃           ┃ & ┃ * ┃ ( ┃ ) ┃ ~ ┃
-             * ─────────────────────────────   ─────────────────────────────
-             * ┃   ┃   ┃   ┃   ┃   ┃   ┃   ┃   ┃   ┃ @ ┃ \ ┃   ┃ [ ┃ ] ┃   ┃
-             * ─────────────────────────────   ─────────────────────────────
-             * ┃   ┃   ┃   ┃   ┃   ┃   ┃   ┃   ┃ ? ┃ | ┃   ┃ ; ┃ : ┃   ┃   ┃
-             * ─────────────────────────────   ─────────────────────────────
-             * ┃   ┃   ┃   ┃   ┃   ┃   ┃           ┃   ┃   ┃ _ ┃   ┃   ┃   ┃
-             * ─────────────────────────────   ─────────────────────────────
-             *             ┃   ┃   ┃   ┃   ┃   ┃   ┃   ┃   ┃ + ┃
-             */
+/* 
+ *      | ! | @ | # | $ | % |           | & | * | ( | ) | ~ |
+ * -----------------------------     -----------------------------
+ * |   |   |   |   |   |   |   |     |   |   | @ | \ |   | [ | ] |   |
+ * -----------------------------     -----------------------------
+ * |   |   |   |   |   |   |   |     | ? | | |   | ; | : |   |   |
+ * -----------------------------     -----------------------------
+ * |   |   |   |   |   |   |           |   |   | _ |   |   |   |
+ * -----------------------------     -----------------------------
+ *               |   |   |   |   |   |   |   |   | + |
+ */
             bindings = <
                         &kp EXCL   &kp AT    &kp POUND  &kp DLLR   &kp PRCNT                        &kp AMPS      &kp ASTRK  &kp LPAR      &kp RPAR  &kp GRAVE 
                 &trans  &none      &none     &kp BSLH   &kp EQUAL  &kp MINUS  &trans     &none      &kp LBKT      &kp INT1   &none         &kp RBKT  &kp BSLH   &trans
