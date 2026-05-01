@@ -80,13 +80,13 @@
              /* Row 4: 親指 */
              /* 幅 高 X座標 Y座標 回転角 ラベルX ラベルY */
              , <&key_physical_attrs 100 100 300 450 0 0 0>
-             , <&key_physical_attrs 100 100 400 450 10 0 0>
-             , <&key_physical_attrs 100 100 500 450 20 0 0>
-             , <&key_physical_attrs 100 100 615 450 30 0 0>
+             , <&key_physical_attrs 100 100 400 450 10000 0 0>
+             , <&key_physical_attrs 100 100 500 450 20000 0 0>
+             , <&key_physical_attrs 100 100 615 450 30000 0 0>
 
-             , <&key_physical_attrs 100 100 765 450 (-30) 0 0>
-             , <&key_physical_attrs 100 100 880 450 (-20) 0 0>
-             , <&key_physical_attrs 100 100 980 450 (-10) 0 0>
+             , <&key_physical_attrs 100 100 765 450 (-30000) 0 0>
+             , <&key_physical_attrs 100 100 880 450 (-20000) 0 0>
+             , <&key_physical_attrs 100 100 980 450 (-10000) 0 0>
              , <&key_physical_attrs 100 100 1080 450 0 0 0>;
     };
 
