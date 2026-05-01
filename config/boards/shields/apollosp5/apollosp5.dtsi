@@ -78,10 +78,10 @@
              , <&key_physical_attrs 100 100 1400 300 0 0 0>
 
              /* Row 4: 親指 */
-             , <&key_physical_attrs 100 100 295 370 0 0 0>
-             , <&key_physical_attrs 100 100 485 400 10000 0 0>
-             , <&key_physical_attrs 100 100 660 410 20000 0 0>
-             , <&key_physical_attrs 100 100 810 420 30000 0 0>
+             , <&key_physical_attrs 100 100 300 450 0 0 0>
+             , <&key_physical_attrs 100 100 485 450 10000 0 0>
+             , <&key_physical_attrs 100 100 660 450 20000 0 0>
+             , <&key_physical_attrs 100 100 810 450 30000 0 0>
 
              , <&key_physical_attrs 100 100 425 450 (-30000) 0 0> /* 回転角も括弧で囲む */
              , <&key_physical_attrs 100 100 690 410 (-20000) 0 0>
