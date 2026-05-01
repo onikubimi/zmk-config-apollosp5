@@ -79,15 +79,15 @@
 
              /* Row 4: 親指 */
              /* 幅 高 X座標 Y座標 回転角 ラベルX ラベルY */
-             , <&key_physical_attrs 100 100 300 450 0 0 0>           /* [4,3] */
-             , <&key_physical_attrs 100 100 410 455 1000 0 0>       /* [4,4] 少し右・下に */
-             , <&key_physical_attrs 100 100 525 470 2000 0 0>       /* [4,5] 角度に合わせて離す */
-             , <&key_physical_attrs 100 100 650 495 3000 0 0>       /* [4,6] */
+             , <&key_physical_attrs 100 100 300 450 0 0 0>
+             , <&key_physical_attrs 100 100 415 460 1000 0 0>
+             , <&key_physical_attrs 100 100 530 470 2000 0 0>
+             , <&key_physical_attrs 100 100 645 480 3000 0 0>
 
-             , <&key_physical_attrs 100 100 750 495 ( 0 ) 0 0>  /* [4,7] 左右対称に配置 */
-             , <&key_physical_attrs 100 100 875 470 ( 0 ) 0 0>  /* [4,8] */
-             , <&key_physical_attrs 100 100 990 455 ( 0 ) 0 0>  /* [4,9] */
-             , <&key_physical_attrs 100 100 1100 450 0 0 0>;         /* [4,10] */
+             , <&key_physical_attrs 100 100 750 480 ( -3000 ) 0 0>
+             , <&key_physical_attrs 100 100 875 470 ( -2000 ) 0 0>
+             , <&key_physical_attrs 100 100 990 460 ( -1000 ) 0 0>
+             , <&key_physical_attrs 100 100 1100 450 0 0 0>;
     };
 
     default_transform: keymap_transform0 {
