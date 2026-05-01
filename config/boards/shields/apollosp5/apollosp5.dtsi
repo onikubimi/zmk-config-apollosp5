@@ -80,14 +80,14 @@
              /* Row 4: 親指 */
              /* 幅 高 X座標 Y座標 回転角 ラベルX ラベルY */
              , <&key_physical_attrs 100 100 300 450 0 0 0>
-             , <&key_physical_attrs 100 100 415 460 1000 0 0>
-             , <&key_physical_attrs 100 100 530 470 2000 0 0>
-             , <&key_physical_attrs 100 100 645 480 3000 0 0>
+             , <&key_physical_attrs 100 100 415 450 1000 0 0>
+             , <&key_physical_attrs 100 100 530 460 2000 0 0>
+             , <&key_physical_attrs 100 100 645 470 3000 0 0>
 
-             , <&key_physical_attrs 100 100 750 480 ( -3000 ) 0 0>
-             , <&key_physical_attrs 100 100 875 470 ( -2000 ) 0 0>
-             , <&key_physical_attrs 100 100 990 460 ( -1000 ) 0 0>
-             , <&key_physical_attrs 100 100 1100 450 0 0 0>;
+             , <&key_physical_attrs 100 100 735 480 ( -3000 ) 0 0>
+             , <&key_physical_attrs 100 100 820 470 ( -2000 ) 0 0>
+             , <&key_physical_attrs 100 100 905 460 ( -1000 ) 0 0>
+             , <&key_physical_attrs 100 100 990 450 0 0 0>;
     };
 
     default_transform: keymap_transform0 {
