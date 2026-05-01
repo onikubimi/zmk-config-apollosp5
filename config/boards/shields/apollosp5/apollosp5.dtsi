@@ -78,15 +78,16 @@
              , <&key_physical_attrs 100 100 1380 300 0 0 0>
 
              /* Row 4: 親指 */
-             , <&key_physical_attrs 100 100 295 370 0 0 0>       /* [4,3] Shift (x:2.95, y:3.7) */
-            , <&key_physical_attrs 100 100 485 400 10000 0 0>   /* [4,4] Ctrl  (r:10, x:4.85) */
-            , <&key_physical_attrs 100 100 660 410 20000 0 0>   /* [4,5] Alt   (r:20, x:6.6) */
-            , <&key_physical_attrs 100 100 810 420 30000 0 0>   /* [4,6] Space (r:30, x:8.1) */
+             /* 幅 高 X座標 Y座標 回転角 ラベルX ラベルY */
+             , <&key_physical_attrs 100 100 300 450 0 0 0>
+             , <&key_physical_attrs 100 100 400 450 0 10 0>
+             , <&key_physical_attrs 100 100 500 450 0 20 0>
+             , <&key_physical_attrs 100 100 615 450 0 30 0>
 
-            , <&key_physical_attrs 100 100 425 450 ( -30000 ) 0 0> /* [4,7] 無変換 (r:-30, x:4.25) */
-            , <&key_physical_attrs 100 100 690 410 ( -20000 ) 0 0> /* [4,8] Win   (r:-20, x:6.9) */
-            , <&key_physical_attrs 100 100 935 430 ( -10000 ) 0 0> /* [4,9] Dele  (r:-10, x:9.35) */
-            , <&key_physical_attrs 100 100 1150 400 0 0 0>;        /* [4,10] -=  (x:11.5, y:4.0) */
+             , <&key_physical_attrs 100 100 765 450 (-30) 0 0>
+             , <&key_physical_attrs 100 100 880 450 (-20) 0 0>
+             , <&key_physical_attrs 100 100 985 450 (-10) 0 0>
+             , <&key_physical_attrs 100 100 1080 450 0 0 0>;
     };
 
     default_transform: keymap_transform0 {
