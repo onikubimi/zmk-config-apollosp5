@@ -84,10 +84,10 @@
              , <&key_physical_attrs 100 100 520 475 (2000) 0 0>
              , <&key_physical_attrs 100 100 630 515 (3000) 0 0>
 
-             , <&key_physical_attrs 100 100 750 515 (-3000) 0 0>
-             , <&key_physical_attrs 100 100 860 470 (-2000) 0 0>
-             , <&key_physical_attrs 100 100 970 455 (-1000) 0 0>
-             , <&key_physical_attrs 100 100 1080 450 (0) 0 0>;
+             , <&key_physical_attrs 100 100 740 565 (-3000) 0 0>
+             , <&key_physical_attrs 100 100 850 480 (-2000) 0 0>
+             , <&key_physical_attrs 100 100 960 475 (-1000) 0 0>
+             , <&key_physical_attrs 100 100 1070 450 (0) 0 0>;
     };
 
     default_transform: keymap_transform0 {
