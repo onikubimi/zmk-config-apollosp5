@@ -79,15 +79,15 @@
 
              /* Row 4: 親指 */
              /* 幅 高 X座標 Y座標 回転角 ラベルX ラベルY */
-             , <&key_physical_attrs 100 100 320 450 0 0 0>         // Ctrl
-             , <&key_physical_attrs 100 100 405 465 (500) 0 0>     // Tab
-             , <&key_physical_attrs 100 100 495 490 (1200) 0 0>    // Alt
-             , <&key_physical_attrs 100 100 595 525 (2200) 0 0>    // Space (Left)
+             , <&key_physical_attrs 100 100 300 350 0 0 0>         // Ctrl
+             , <&key_physical_attrs 100 100 400 400 (500) 0 0>     // Tab
+             , <&key_physical_attrs 100 100 505 450 (1200) 0 0>    // Alt
+             , <&key_physical_attrs 100 100 615 500 (2200) 0 0>    // Space (Left)
 
-             , <&key_physical_attrs 100 100 755 525 (-2200) 0 0>   // Layer (Right)
-             , <&key_physical_attrs 100 100 855 490 (-1200) 0 0>   // GUI
-             , <&key_physical_attrs 100 100 945 465 (-500) 0 0>    // Del
-             , <&key_physical_attrs 100 100 1030 450 0 0 0>;       // Minus
+             , <&key_physical_attrs 100 100 765 500 (-2200) 0 0>   // Layer (Right)
+             , <&key_physical_attrs 100 100 875 450 (-1200) 0 0>   // GUI
+             , <&key_physical_attrs 100 100 985 400 (-500) 0 0>    // Del
+             , <&key_physical_attrs 100 100 1090 350 0 0 0>;       // Minus
     };
 
     default_transform: keymap_transform0 {
