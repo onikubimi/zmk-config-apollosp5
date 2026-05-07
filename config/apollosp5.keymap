@@ -18,8 +18,9 @@
         // 2と3を同時押しでZMK Studioロック解除
         combo_enter {
             timeout-ms = <50>;
-            key-positions = <1 2>; // 物理キーのインデックスを指定
-            bindings = <&studio_unlock>;
+            key-positions = <0 11>; // 物理キーのインデックスを指定
+            bindings = <&bt BT_SEL 0>;
+            layers = <1>;
         };
     };
 
