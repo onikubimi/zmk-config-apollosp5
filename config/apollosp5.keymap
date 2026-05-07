@@ -13,9 +13,31 @@
 };
 
 / {
+        macros {
+                // 画面ショット (Shift + Win + S)
+                m_sshot: m_sshot {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings
+                                = <&macro_press &kp LSHFT &kp LGUI>
+                                , <&macro_tap &kp S>
+                                , <&macro_release &kp LSHFT &kp LGUI>;
+                };
+
+                // 画面ロック (Ctrl + Alt + Del)
+                m_slock: m_slock {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings
+                                = <&macro_press &kp LCTRL &kp LALT>
+                                , <&macro_tap &kp DEL>
+                                , <&macro_release &kp LCTRL &kp LALT>;
+                };
+        };
+
+
         combos {
                 compatible = "zmk,combos";
-
                 // 1 + Q で BT0
                 combo_bt0 {
                     timeout-ms = <50>;
@@ -49,39 +71,16 @@
                 };
         };
 
-    behaviors {
-        // 横スクロール
-            scroll_left_right: behavior_sensor_rotate_mouse_wheel_left_right {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_RIGHT>, <&msc SCRL_LEFT>;
-            tap-ms = <20>;
-            };
-    };
-
-    macros {
-        // 画面ショット (Shift + Win + S)
-        m_sshot: m_sshot {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LSHFT &kp LGUI>
-                , <&macro_tap &kp S>
-                , <&macro_release &kp LSHFT &kp LGUI>
-                ;
+        behaviors {
+                // 横スクロール
+                scroll_left_right: behavior_sensor_rotate_mouse_wheel_left_right {
+                        compatible = "zmk,behavior-sensor-rotate";
+                        #sensor-binding-cells = <0>;
+                        bindings = <&msc SCRL_RIGHT>, <&msc SCRL_LEFT>;
+                        tap-ms = <20>;
+                };
         };
 
-        // 画面ロック (Ctrl + Alt + Del)
-        m_slock: m_slock {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCTRL &kp LALT>
-                , <&macro_tap &kp DEL>
-                , <&macro_release &kp LCTRL &kp LALT>
-                ;
-        };
-    };
 
 /* 
  * ============================================================================
