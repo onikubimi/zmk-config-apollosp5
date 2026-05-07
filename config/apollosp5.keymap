@@ -59,6 +59,30 @@
             };
     };
 
+    macros {
+        // 画面ショット (Shift + Win + S)
+        m_screenshot: m_screenshot {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT &kp LGUI>
+                , <&macro_tap &kp S>
+                , <&macro_release &kp LSHFT &kp LGUI>
+                ;
+        };
+
+        // 画面ロック (Ctrl + Alt + Del)
+        m_screenlock: m_screenlock {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL &kp LALT>
+                , <&macro_tap &kp DEL>
+                , <&macro_release &kp LCTRL &kp LALT>
+                ;
+        };
+    };
+
 /* 
  * ============================================================================
  *  JIS (Japanese) Layout Symbol Mapping with Modifiers for ZMK
