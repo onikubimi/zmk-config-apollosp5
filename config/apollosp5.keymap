@@ -61,7 +61,7 @@
 
     macros {
         // 画面ショット (Shift + Win + S)
-        m_screenshot: m_screenshot {
+        m_sshot: m_sshot {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -72,7 +72,7 @@
         };
 
         // 画面ロック (Ctrl + Alt + Del)
-        m_screenlock: m_screenlock {
+        m_slock: m_slock {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -167,11 +167,11 @@
         // レイヤー2: Lower
         lower_layer {
             bindings = <
-                        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none     &none                         &none   &none   &none   &none   &none   &none
-                &trans  &bt BT_CLR    &none         &none         &none     &none      &kp DEL    &none   &trans  &trans  &none   &none   &none   &trans
-                &trans  &none         &none         &none         &none     &none      &trans     &none   &trans  &trans  &none   &none   &trans  &trans
-                &trans  &trans        &none         &none         &none     &none                         &trans  &trans  &trans  &trans  &trans  &trans
-                                                    &trans        &trans    &trans     &trans     &trans  &trans  &trans  &trans
+                        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none     &none                           &none   &none   &none   &none   &none   &none
+                &trans  &bt BT_CLR    &none         &none         &none     &none      &kp DEL    &m_sshot  &trans  &trans  &none   &none   &none   &trans
+                &trans  &none         &none         &none         &none     &none      &trans     &m_slock  &trans  &trans  &none   &none   &trans  &trans
+                &trans  &trans        &none         &none         &none     &none                           &trans  &trans  &trans  &trans  &trans  &trans
+                                                    &trans        &trans    &trans     &trans     &trans    &trans  &trans  &trans
                                       &kp UP        &kp LEFT      &kp DOWN  &kp RIGHT  &kp ENTER
             >;
             sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
