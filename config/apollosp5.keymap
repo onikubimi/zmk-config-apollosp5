@@ -166,7 +166,7 @@
         // レイヤー2: Lower
         lower_layer {
             bindings = <
-                        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none     &none                           &none   &none   &none   &none   &none   &none
+                        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none     &none                           &none   &none   &none   &none   &none
                 &trans  &bt BT_CLR    &none         &none         &none     &none      &kp DEL    &m_sshot  &trans  &trans  &none   &none   &none   &trans
                 &trans  &none         &none         &none         &none     &none      &trans     &m_slock  &trans  &trans  &none   &none   &trans  &trans
                 &trans  &trans        &none         &none         &none     &none                           &trans  &trans  &trans  &trans  &trans  &trans
