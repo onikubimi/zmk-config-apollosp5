@@ -85,7 +85,7 @@
              , <&key_physical_attrs 100 100 630 515 (3000) 0 0>
 
              , <&key_physical_attrs 100 100 760 560 (-3000) 0 0>    // 565
-             , <&key_physical_attrs 100 100 860 510 (-2000) 0 0>    // 515→500→490→510
+             , <&key_physical_attrs 100 100 865 512 (-2000) 0 0>    // 490→510→512
              , <&key_physical_attrs 100 100 970 468 (-1000) 0 0>    // 475
              , <&key_physical_attrs 100 100 1080 450 (0) 0 0>;      // 450
     };
