@@ -153,11 +153,11 @@
  *               |   |   |   |   |   |   |   |   | + |
  */
             bindings = <
-                        &kp EXCL   &kp AT    &kp POUND  &kp DLLR   &kp PRCNT                        &kp CARET     &kp AMPS   &kp ASTRK     &kp LPAR  &kp RPAR 
-                &trans  &none      &none     &none      &kp EQUAL  &none      &kp DEL    &kp DEL    &kp LBKT      &kp INT1   &none         &kp RBKT  &kp BSLH   &trans
-                &trans  &none      &none     &none      &none      &none      &trans     &trans     &kp LS(INT3)  &none      &kp SEMI      &kp SQT   &trans     &trans
-                &trans  &none      &none     &none      &none      &none                            &none         &none      &kp LS(INT1)  &trans    &trans     &trans
-                                             &trans     &trans     &trans     &trans     &trans     &trans        &trans     &kp LS(SEMI)
+                        &kp EXCL   &kp AT    &kp POUND  &kp DLLR   &kp PRCNT                        &kp CARET     &kp AMPS     &kp ASTRK     &kp LPAR  &kp RPAR 
+                &trans  &none      &none     &none      &kp EQUAL  &none      &kp DEL    &kp DEL    &kp LBKT      &kp INT1     &none         &kp RBKT  &kp BSLH   &trans
+                &trans  &none      &none     &none      &none      &none      &trans     &trans     &kp LS(INT3)  &none        &kp SEMI      &kp SQT   &trans     &trans
+                &trans  &none      &none     &none      &none      &none                            &none         &none        &kp LS(INT1)  &trans    &trans     &trans
+                                             &trans     &trans     &trans     &trans     &trans     &trans        &kp LS(SQT)  &kp LS(SEMI)
                                    &kp UP    &kp LEFT   &kp DOWN   &kp RIGHT  &kp ENTER
             >;
             sensor-bindings = <&scroll_left_right>;
