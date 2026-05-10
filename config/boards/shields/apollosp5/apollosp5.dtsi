@@ -90,11 +90,11 @@
              , <&key_physical_attrs 100 100 1080 450 (0) 0 0>       // 450
 
 
-             , <&key_physical_attrs 100 100 250 500 0 0 0>  // 上
-             , <&key_physical_attrs 100 100 140 600 0 0 0>  // 左
-             , <&key_physical_attrs 100 100 250 700 0 0 0>  // 下
-             , <&key_physical_attrs 100 100 360 600 0 0 0>  // 右
-             , <&key_physical_attrs 100 100 250 600 0 0 0>; // Enter
+             , <&key_physical_attrs 100 100 150 500 0 0 0>  // 上
+             , <&key_physical_attrs 100 100 50 600 0 0 0>  // 左
+             , <&key_physical_attrs 100 100 150 700 0 0 0>  // 下
+             , <&key_physical_attrs 100 100 250 600 0 0 0>  // 右
+             , <&key_physical_attrs 100 100 150 600 0 0 0>; // Enter
     };
 
     default_transform: keymap_transform0 {
