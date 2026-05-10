@@ -90,11 +90,11 @@
              , <&key_physical_attrs 100 100 1080 450 (0) 0 0>       // 450
 
 
-             , <&key_physical_attrs 100 100 550 500 0 0 0>  // (X=550, Y=基準より-100)
-             , <&key_physical_attrs 100 100 440 600 0 0 0>  // (X=基準より-110, Y=600)
-             , <&key_physical_attrs 100 100 550 600 0 0 0>  // (X=550, Y=基準)
-             , <&key_physical_attrs 100 100 660 600 0 0 0>  // (X=基準より+110, Y=600)
-             , <&key_physical_attrs 100 100 800 600 0 0 0>; // 以前より少し右側に配置
+             , <&key_physical_attrs 100 100 250 500 0 0 0>  // 上
+             , <&key_physical_attrs 100 100 140 600 0 0 0>  // 左
+             , <&key_physical_attrs 100 100 250 700 0 0 0>  // 下
+             , <&key_physical_attrs 100 100 360 600 0 0 0>  // 右
+             , <&key_physical_attrs 100 100 250 600 0 0 0>; // Enter
     };
 
     default_transform: keymap_transform0 {
