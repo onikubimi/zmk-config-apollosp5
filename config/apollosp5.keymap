@@ -141,19 +141,8 @@
 
         // レイヤー1: Upper
         upper_layer {
-/* 
- *      | ! | @ | # | $ | % |           | & | * | ( | ) | ~ |
- * -----------------------------     -----------------------------
- * |   |   |   |   |   |   |   |     |   |   | @ | \ |   | [ | ] |   |
- * -----------------------------     -----------------------------
- * |   |   |   |   |   |   |   |     | ? | | |   | ; | : |   |   |
- * -----------------------------     -----------------------------
- * |   |   |   |   |   |   |           |   |   | _ |   |   |   |
- * -----------------------------     -----------------------------
- *               |   |   |   |   |   |   |   |   | + |
- */
             bindings = <
-                        &kp EXCL   &kp AT    &kp POUND  &kp DLLR   &kp PRCNT                        &kp CARET     &kp AMPS     &kp ASTRK     &kp LPAR  &kp RPAR 
+                        &kp N2     &kp AT    &kp POUND  &kp DLLR   &kp PRCNT                        &kp CARET     &kp AMPS     &kp ASTRK     &kp LPAR  &kp RPAR 
                 &trans  &none      &none     &none      &kp EQUAL  &none      &kp DEL    &kp DEL    &kp LBKT      &kp INT1     &none         &kp RBKT  &kp BSLH   &trans
                 &trans  &none      &none     &none      &kp UP     &none      &trans     &trans     &kp LS(INT3)  &none        &kp SEMI      &kp SQT   &trans     &trans
                 &trans  &trans     &none     &kp LEFT   &kp DOWN   &kp RIGHT                        &none         &none        &kp LS(INT1)  &trans    &trans     &trans
