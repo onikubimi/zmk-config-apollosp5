@@ -129,12 +129,12 @@
         // レイヤー0: 基本レイヤー
         default_layer {
             bindings = <
-                           &kp N1    &kp N2    &kp N3     &kp N4     &kp N5                                &kp N6    &kp N7    &kp N8    &kp N9    &kp N0
-                &kp ESC    &kp Q     &kp W     &kp E      &kp R      &kp T     &kp BSPC        &kp MINUS   &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BSPC
-                &kp CAPS   &kp A     &kp S     &kp D      &kp F      &kp G     &kp ENTER       &kp SLASH   &kp H     &kp J     &kp K     &kp L     &kp UP    &kp ENTER
-                &kp LSHFT  &kp BSLH  &kp Z     &kp X      &kp C      &kp V                                 &kp B     &kp N     &kp M     &kp LEFT  &kp DOWN  &kp RIGHT
-                                               &kp LCTRL  &kp TAB    &kp LALT  &lt 1 SPACE     &lt 2 INT5  &kp LGUI  &kp COMMA &kp DOT
-                                     &kp UP    &kp LEFT   &kp DOWN   &kp RIGHT &kp ENTER
+                           &kp N1        &kp N2    &kp N3     &kp N4     &kp N5                                &kp N6    &kp N7    &kp N8    &kp N9    &kp N0
+                &kp ESC    &kp Q         &kp W     &kp E      &kp R      &kp T     &kp BSPC        &kp MINUS   &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BSPC
+                &kp CAPS   &kp A         &kp S     &kp D      &kp F      &kp G     &kp ENTER       &kp SLASH   &kp H     &kp J     &kp K     &kp L     &kp UP    &kp ENTER
+                &kp LSHFT  &kp LS(INT1)  &kp Z     &kp X      &kp C      &kp V                                 &kp B     &kp N     &kp M     &kp LEFT  &kp DOWN  &kp RIGHT
+                                                   &kp LCTRL  &kp TAB    &kp LALT  &lt 1 SPACE     &lt 2 INT5  &kp LGUI  &kp COMMA &kp DOT
+                                         &kp UP    &kp LEFT   &kp DOWN   &kp RIGHT &kp ENTER
             >;
             sensor-bindings = <&scroll_left_right>;
         };
@@ -156,7 +156,7 @@
                         &kp EXCL   &kp AT    &kp POUND  &kp DLLR   &kp PRCNT                        &kp CARET     &kp AMPS     &kp ASTRK     &kp LPAR  &kp RPAR 
                 &trans  &none      &none     &none      &kp EQUAL  &none      &kp DEL    &kp DEL    &kp LBKT      &kp INT1     &none         &kp RBKT  &kp BSLH   &trans
                 &trans  &none      &none     &none      &kp UP     &none      &trans     &trans     &kp LS(INT3)  &none        &kp SEMI      &kp SQT   &trans     &trans
-                &trans  &none      &none     &kp LEFT   &kp DOWN   &kp RIGHT                        &none         &none        &kp LS(INT1)  &trans    &trans     &trans
+                &trans  &trans     &none     &kp LEFT   &kp DOWN   &kp RIGHT                        &none         &none        &kp LS(INT1)  &trans    &trans     &trans
                                              &trans     &trans     &trans     &trans     &trans     &trans        &kp LS(SQT)  &kp LS(SEMI)
                                    &kp UP    &kp LEFT   &kp DOWN   &kp RIGHT  &kp ENTER
             >;
@@ -166,12 +166,12 @@
         // レイヤー2: Lower
         lower_layer {
             bindings = <
-                        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none     &none                           &none   &none   &none   &none   &none
-                &trans  &bt BT_CLR    &none         &none         &none     &none      &kp DEL    &m_sshot  &trans  &trans  &none   &none   &none   &trans
-                &trans  &none         &none         &none         &none     &none      &trans     &m_slock  &trans  &trans  &none   &none   &trans  &trans
-                &trans  &trans        &none         &none         &none     &none                           &trans  &trans  &trans  &trans  &trans  &trans
-                                                    &trans        &trans    &trans     &trans     &trans    &trans  &trans  &trans
-                                      &kp UP        &kp LEFT      &kp DOWN  &kp RIGHT  &kp ENTER
+                        &none       &none    &none     &none     &none                           &none   &none   &none   &none   &none
+                &trans  &bt BT_CLR  &none    &none     &none     &none      &kp DEL    &m_sshot  &trans  &trans  &none   &none   &none   &trans
+                &trans  &none       &none    &none     &none     &none      &trans     &m_slock  &trans  &trans  &none   &none   &trans  &trans
+                &trans  &trans      &none    &none     &none     &none                           &trans  &trans  &trans  &trans  &trans  &trans
+                                             &trans    &trans    &trans     &trans     &trans    &trans  &trans  &trans
+                                    &kp UP   &kp LEFT  &kp DOWN  &kp RIGHT  &kp ENTER
             >;
             sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
         };
